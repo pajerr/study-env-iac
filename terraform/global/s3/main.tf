@@ -2,11 +2,12 @@ provider "aws" {
     region = "eu-central-1"
 }
 
+#Uncommented only after below s3 resource has been deployed first
 #terraform { 
 #    backend "s3" { 
-#         key = "studyenv/global/s3/terraform.tfstate"
-#         region          = "eu-central-1"
-#         encrypt         = true
+#      key             = "studyenv/global/s3/terraform.tfstate"
+#      region          = "eu-central-1"
+#      encrypt         = true
 #    }
 #}
 
@@ -18,7 +19,7 @@ resource "aws_s3_bucket" "terraform_state" {
 
     lifecycle { 
         prevent_destroy = true 
-    } 
+    }
 
   # Enable versioning so we can see the full revision history of our
   # state files
