@@ -17,7 +17,7 @@ resource "aws_s3_bucket" "terraform_state" {
     bucket          = var.bucket_name
 
     lifecycle { 
-        prevent_destroy = false 
+        prevent_destroy = true 
     }
 
   # Enable versioning so we can see the full revision history of our
