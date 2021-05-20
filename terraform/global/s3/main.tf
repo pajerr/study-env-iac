@@ -6,7 +6,7 @@ provider "aws" {
 #bucket name and other variables need to be defined in backend.hcl
 terraform { 
     backend "s3" { 
-      key = "studyenv/global/s3/terraform.tfstate"
+        key = "studyenv/global/s3/terraform.tfstate"
     }
 }
 
@@ -14,7 +14,7 @@ terraform {
 #terraform backend s3 block to use s3 as remote backend
 resource "aws_s3_bucket" "terraform_state" {
 
-    bucket          = var.bucket_name
+    bucket  = var.bucket_name
 
     lifecycle { 
         prevent_destroy = true 
@@ -23,7 +23,7 @@ resource "aws_s3_bucket" "terraform_state" {
   # Enable versioning so we can see the full revision history of our
   # state files
     versioning {
-    enabled = true
+        enabled = true
     }
 
   # Enable server-side encryption by default
